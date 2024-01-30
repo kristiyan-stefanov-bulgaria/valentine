@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Proposal</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #444;
+      border-radius: 10px;
+      background-color: #1f1f1f;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .textA {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .greenbutton {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    .redButton {
+      background-color: #e53935;
+      color: #fff;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container heyYou">
+    <img src="images/me.gif" alt="Valentine's Day Proposal">
+    <p class="proposalText">Hey you!!!!!</p>
+    <button id="helloButton" class="button greenbutton">Um.. hello?</button>
+  </div>
+  <div class="container iHaveAQuestion hidden">
+    <img src="images/question.jpg" alt="Valentine's Day Proposal">
+    <p class="proposalText">I have a question for you!!</p>
+    <button id="questionButton" class="button greenbutton">What is it??</button>
+  </div>
+
+  <div class="container myValentine hidden">
+    <img src="images/valentineCat.jpg" alt="Valentine's Day Proposal">
+    <p class="proposalText">Will you be my Valentine?!??!?!</p>
+    <button id="yesButton1" class="button greenbutton">Yes</button>
+    <button id="noButton" class="button redButton">No</button>
+  </div>
+
+  <div class="container yeeey hidden">
+    <img src="images/happycat.gif" alt="Valentine's Day Proposal">
+    <p class="proposalText">YEEEEEEEEEY!!!!!!!</p>
+  </div>
+
+    <div class="container noSlide hidden">
+    <img id="cryingCat" src="images/crying.gif" alt="Valentine's Day Proposal">
+    <p id="sureText" class="proposalText">Are you sure?</p>
+    <button id="yesButton2" class="button greenbutton">Yes</button>
+    <button id="noButton2" class="button redButton">No</button>
+  </div>
+
+  <script>
+    let helloButton = document.querySelector('#helloButton');
+    helloButton.addEventListener('click', () => {
+      document.querySelector('.heyYou').classList.toggle('hidden');
+      document.querySelector('.iHaveAQuestion').classList.toggle('hidden');
+    });
+
+    let questionButton = document.querySelector('#questionButton');
+    questionButton.addEventListener('click', () => {
+      document.querySelector('.iHaveAQuestion').classList.toggle('hidden');
+      document.querySelector('.myValentine').classList.toggle('hidden');
+    });
+
+    let yesButton1 = document.querySelector('#yesButton1');
+    yesButton1.addEventListener('click', () => {
+      document.querySelector('.myValentine').classList.toggle('hidden');
+      document.querySelector('.yeeey').classList.toggle('hidden');
+    });
+
+    let noButton = document.querySelector('#noButton');
+    noButton.addEventListener('click', () => {
+      document.querySelector('.myValentine').classList.toggle('hidden');
+      document.querySelector('.noSlide').classList.toggle('hidden');
+    });
+
+    let yesButton2 = document.querySelector('#yesButton2');
+    yesButton2.addEventListener('click', () => {
+      let cryingCat = document.querySelector('#cryingCat');
+      cryingCat.src = "images/pistol.jpg"
+      let sureText = document.querySelector('#sureText');
+      sureText.textContent = "U still sure?????????????"
+      yesButton2.style.position = "absolute"
+      yesButton2.style.left = Math.floor(Math.random() * 1920) + "px"
+      yesButton2.style.top = Math.floor(Math.random() * 800) + "px"
+    });
+
+    let noButton2 = document.querySelector('#noButton2');
+    noButton2.addEventListener('click', () => {
+      document.querySelector('.noSlide').classList.toggle('hidden');
+      document.querySelector('.yeeey').classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
